@@ -2,7 +2,7 @@
 
 A lane-defense game: plant guardians on a lawn and stop Gearax's Bolt-Bots before they reach your
 patio. **120 levels in six worlds**, a story told in scenes between worlds, a boss at the end of each
-world, 12 plants and 8 kinds of robot. All the art is drawn in code from the game's own vector sprites.
+world, 12 plants and 8 kinds of robot. All the art is 3D, built in code: no image or model files.
 
 - **Khmer and English**: Khmer by default, with Khmer digits.
 - **Made for phones**: tap a seed then a tile, or drag a seed onto the lawn; tap dew to collect it
@@ -13,16 +13,24 @@ world, 12 plants and 8 kinds of robot. All the art is drawn in code from the gam
 - **Plays inside the [gaming gateway](https://github.com/KheangLov/gaming-gateway)**, loaded with
   Module Federation (`modules/gateway-remote/`, the same folder as in the other games).
 
-Built with Nuxt 4, Nuxt UI and [Motion for Vue](https://motion.dev/docs/vue) for interface animation.
+Built with Nuxt 4, Nuxt UI, [three.js](https://threejs.org) and [Motion for Vue](https://motion.dev/docs/vue) for interface animation.
 
-## How it's built for speed
+## How it's built
 
 - **The rules are separate from the drawing** (`shared/game/engine.ts`): a plain TypeScript engine,
   stepped at a fixed 60 steps a second (120 at double speed), emits events (shots, hits, waves) that
   drive the effects, sounds and top bar. Deterministic, so tests play whole levels.
-- **The board is one canvas** (`app/game/renderer.ts`): each sprite is drawn once per screen size into
-  a bitmap (plus a white "hit" copy and an icy copy) and copied each frame; the lawn is one cached
-  bitmap; particles live in a fixed pool; the canvas has no alpha channel and a pixel budget.
+- **The garden is real 3D, in plain three.js** (`app/game/three/`): the lawn seen from the front and
+  above, with soft shadows, the house and its garden carts on the left and the street on the right;
+  shaded models of every plant, robot, shot and dew drop built from shapes in code (`models.ts`),
+  with textures painted in code (nothing to download, so it works offline). Night worlds are lit by
+  the moon and lanterns, fog drifts over the far columns, rain falls in the storm. The camera fits
+  the garden to any screen and turns it so robots come up the screen on phones held upright.
+  Health bars are HTML laid over the canvas; taps and dragged seeds are turned back into board
+  points for the engine. Everything that never moves is merged into a few meshes. Settings →
+  high-quality graphics turns shadows and sharp pixels off for older phones.
+- **The interface uses the same models**: each is rendered once into a picture (`icons.ts`) for the
+  seed cards, briefings and story; the menus have the garden turning slowly behind them.
 - **Vue stays out of the frame loop**: the seed cards' recharge sweep is written straight to the
   cards, and the top bar's values update only when they change.
 - **Sound and music are synthesised** with Web Audio: no audio files to download.

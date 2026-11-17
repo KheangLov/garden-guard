@@ -14,22 +14,6 @@ const playLabel = computed(() => {
   if (!progress.loaded || progress.cleared === 0) return t('home.start')
   return t('home.continue', { level: localDigits(levelLabel(nextLevel.value), locale.value) })
 })
-
-/** The hero's cast: guardians on the left, robots on the right, each bobbing on its own beat. */
-const heroes = [
-  { name: 'bulb', size: 'size-12 sm:size-24 landscape:max-lg:size-14', delay: 0 },
-  { name: 'chili', size: 'size-14 sm:size-28 landscape:max-lg:size-16', delay: 0.4 },
-  { name: 'pumpkin', size: 'size-12 sm:size-24 landscape:max-lg:size-14', delay: 0.8 },
-] as const
-const robots = [
-  { name: 'drone', size: 'size-10 sm:size-20 landscape:max-lg:size-12', delay: 0.2, lift: -30 },
-  { name: 'bot', size: 'size-14 sm:size-28 landscape:max-lg:size-16', delay: 0.6, lift: 0 },
-  { name: 'brute', size: 'size-14 sm:size-28 landscape:max-lg:size-16', delay: 1, lift: 0 },
-] as const
-
-const float = (delay: number) => reduced.value
-  ? {}
-  : { animate: { y: [0, -8, 0] }, transition: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' as const, delay } }
 </script>
 
 <template>
@@ -79,53 +63,6 @@ const float = (delay: number) => reduced.value
           {{ t('app.tagline') }}
         </p>
       </motion.div>
-
-      <div
-        class="flex w-full max-w-3xl items-end justify-between gap-1 overflow-x-clip px-0 sm:gap-2 sm:px-2 landscape:max-lg:max-w-xl"
-        aria-hidden="true"
-      >
-        <div class="flex items-end gap-1 sm:gap-3">
-          <motion.div
-            v-for="(hero, i) in heroes"
-            :key="hero.name"
-            :initial="reduced ? false : { opacity: 0, x: -60, scale: 0.6 }"
-            :animate="{ opacity: 1, x: 0, scale: 1 }"
-            :transition="{ type: 'spring', stiffness: 220, damping: 15, delay: 0.15 + i * 0.12 }"
-          >
-            <motion.div v-bind="float(hero.delay)">
-              <SpriteIcon
-                :name="hero.name"
-                :class="hero.size"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-        <motion.div
-          :initial="reduced ? false : { scale: 0, rotate: -20 }"
-          :animate="{ scale: 1, rotate: 0 }"
-          :transition="{ type: 'spring', stiffness: 260, damping: 12, delay: 0.6 }"
-          class="mb-6 font-display text-3xl text-sun-300 sm:text-4xl"
-        >
-          VS
-        </motion.div>
-        <div class="flex items-end gap-1 sm:gap-3">
-          <motion.div
-            v-for="(robot, i) in robots"
-            :key="robot.name"
-            :initial="reduced ? false : { opacity: 0, x: 60, scale: 0.6 }"
-            :animate="{ opacity: 1, x: 0, scale: 1 }"
-            :transition="{ type: 'spring', stiffness: 220, damping: 15, delay: 0.3 + i * 0.12 }"
-            :style="{ marginBottom: `${-robot.lift}px` }"
-          >
-            <motion.div v-bind="float(robot.delay)">
-              <SpriteIcon
-                :name="robot.name"
-                :class="robot.size"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
 
       <motion.div
         :initial="reduced ? false : { opacity: 0, y: 30 }"

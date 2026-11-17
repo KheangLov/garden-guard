@@ -28,7 +28,8 @@ const SAVE = JSON.stringify({
 })
 
 mkdirSync(out, { recursive: true })
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
+// WebGL without a GPU (CI machines): Chromium's software renderer.
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] })
 const problems = []
 let screens = 0
 
@@ -69,16 +70,15 @@ for (const viewport of VIEWPORTS) {
     await check('briefing')
     await page.click('button.btn-game.lg')
     await page.waitForTimeout(2500)
-    // Held upright, the game first asks to turn the phone; play anyway.
-    const anyway = page.locator('[role=dialog] button.btn-game')
-    if (await anyway.count()) await anyway.first().click()
     await page.waitForTimeout(500)
     await check('playing')
-    if (viewport.width > viewport.height) {
+    {
       const fits = await page.evaluate(() => {
         const r = document.querySelector('canvas').getBoundingClientRect()
         return r.top >= 0 && r.bottom <= innerHeight + 1 && r.width > innerWidth * 0.5
       })
+      const calls = Number(await page.locator('canvas').getAttribute('data-draw-calls'))
+      if (!calls) problems.push(`${viewport.name}/${locale}: the 3D garden didn't draw`)
       if (!fits) problems.push(`${viewport.name}/${locale}: the board doesn't fit the screen`)
     }
     await context.close()

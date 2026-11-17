@@ -6,6 +6,12 @@ const route = useRoute()
 // Inside the gaming gateway the page belongs to the gateway: no manifest or service worker.
 const { inGateway } = useGateway()
 const progress = useProgressStore()
+// The 3D garden behind the menus rests while a level is being played (one 3D scene at a time).
+const playing = useState('playing', () => false)
+const dioramaWorld = computed(() => {
+  const n = Number(String(route.params.level ?? '')) || progress.unlocked
+  return Math.min(5, Math.floor((n - 1) / 20))
+})
 
 useHead({
   htmlAttrs: { lang: locale },
@@ -30,6 +36,12 @@ watch(() => [$pwa?.needRefresh, route.path] as const, ([needRefresh, path]) => {
     <NuxtPwaManifest v-if="!inGateway" />
     <NuxtRouteAnnouncer />
     <AppBackdrop />
+    <ClientOnly>
+      <GardenDiorama
+        v-if="!playing"
+        :world="dioramaWorld"
+      />
+    </ClientOnly>
     <NuxtPage />
   </UApp>
 </template>

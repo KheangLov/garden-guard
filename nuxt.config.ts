@@ -114,8 +114,8 @@ export default defineNuxtConfig({
       theme_color: '#0d2318',
       background_color: '#07140d',
       display: 'standalone',
-      // The board is wide: phones play it sideways (the game asks to turn the phone).
-      orientation: 'landscape',
+      // The garden turns to fit the screen, so the phone can be held either way.
+      orientation: 'any',
       start_url: '/',
       scope: '/',
       categories: ['games', 'entertainment'],

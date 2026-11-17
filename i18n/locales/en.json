@@ -32,12 +32,30 @@
     "boss": "Boss"
   },
   "worlds": {
-    "backyard": { "name": "Sunny Backyard", "blurb": "Where it all begins: Dara's vegetable patch." },
-    "moonlit": { "name": "Moonlit Garden", "blurb": "No dew falls at night. Moon Bulbs keep you going." },
-    "terraces": { "name": "Rice Terraces", "blurb": "Mist rolls over the fields and hides the robots." },
-    "temple": { "name": "Temple Ruins", "blurb": "Fallen stones block some tiles of the old garden." },
-    "river": { "name": "Mekong Riverside", "blurb": "A storm: faster robots, but more dew from the sky." },
-    "factory": { "name": "Gearax Factory", "blurb": "The final battle, in the rust and the dark." }
+    "backyard": {
+      "name": "Sunny Backyard",
+      "blurb": "Where it all begins: Dara's vegetable patch."
+    },
+    "moonlit": {
+      "name": "Moonlit Garden",
+      "blurb": "No dew falls at night. Moon Bulbs keep you going."
+    },
+    "terraces": {
+      "name": "Rice Terraces",
+      "blurb": "Mist rolls over the fields and hides the robots."
+    },
+    "temple": {
+      "name": "Temple Ruins",
+      "blurb": "Fallen stones block some tiles of the old garden."
+    },
+    "river": {
+      "name": "Mekong Riverside",
+      "blurb": "A storm: faster robots, but more dew from the sky."
+    },
+    "factory": {
+      "name": "Gearax Factory",
+      "blurb": "The final battle, in the rust and the dark."
+    }
   },
   "kinds": {
     "tutorial": "Lesson",
@@ -57,28 +75,88 @@
     "rows": "Fewer rows: a gentle start"
   },
   "plants": {
-    "bulb": { "name": "Glow Bulb", "desc": "Makes 25 dew every few seconds. Plant these first." },
-    "moonbulb": { "name": "Moon Bulb", "desc": "Cheap, and makes a little dew often. Great at night." },
-    "chili": { "name": "Chili Cannon", "desc": "Shoots fireballs down its row." },
-    "twin": { "name": "Twin Pepper", "desc": "Shoots two fireballs at a time." },
-    "mint": { "name": "Frost Mint", "desc": "Its icy shots slow robots down." },
-    "bamboo": { "name": "Bamboo Blaster", "desc": "Its leaf darts fly through every robot in the row." },
-    "lotus": { "name": "Lotus Lobber", "desc": "Throws seeds over shields, splashing robots nearby." },
-    "pumpkin": { "name": "Pumpkin Wall", "desc": "Tough. Robots stop to chew on it." },
-    "sugarpalm": { "name": "Sugar Palm", "desc": "Very tough and tall: nothing jumps over it." },
-    "corn": { "name": "Corn Popper", "desc": "Explodes after a second, clearing a 3×3 area." },
-    "coconut": { "name": "Coconut Mine", "desc": "Takes a while to arm, then blows up the first robot to step on it." },
-    "durian": { "name": "Durian Spikes", "desc": "Hurts every robot that walks over it, and pops a tank's treads." }
+    "bulb": {
+      "name": "Glow Bulb",
+      "desc": "Makes 25 dew every few seconds. Plant these first."
+    },
+    "moonbulb": {
+      "name": "Moon Bulb",
+      "desc": "Cheap, and makes a little dew often. Great at night."
+    },
+    "chili": {
+      "name": "Chili Cannon",
+      "desc": "Shoots fireballs down its row."
+    },
+    "twin": {
+      "name": "Twin Pepper",
+      "desc": "Shoots two fireballs at a time."
+    },
+    "mint": {
+      "name": "Frost Mint",
+      "desc": "Its icy shots slow robots down."
+    },
+    "bamboo": {
+      "name": "Bamboo Blaster",
+      "desc": "Its leaf darts fly through every robot in the row."
+    },
+    "lotus": {
+      "name": "Lotus Lobber",
+      "desc": "Throws seeds over shields, splashing robots nearby."
+    },
+    "pumpkin": {
+      "name": "Pumpkin Wall",
+      "desc": "Tough. Robots stop to chew on it."
+    },
+    "sugarpalm": {
+      "name": "Sugar Palm",
+      "desc": "Very tough and tall: nothing jumps over it."
+    },
+    "corn": {
+      "name": "Corn Popper",
+      "desc": "Explodes after a second, clearing a 3×3 area."
+    },
+    "coconut": {
+      "name": "Coconut Mine",
+      "desc": "Takes a while to arm, then blows up the first robot to step on it."
+    },
+    "durian": {
+      "name": "Durian Spikes",
+      "desc": "Hurts every robot that walks over it, and pops a tank's treads."
+    }
   },
   "robots": {
-    "bot": { "name": "Bolt-Bot", "desc": "A wind-up robot. Slow, but it never stops." },
-    "brute": { "name": "Tin Brute", "desc": "Wears a steel helmet that soaks up hits." },
-    "mini": { "name": "Mini-Bot", "desc": "Tiny and fast; comes in threes." },
-    "drone": { "name": "Buzz Drone", "desc": "Flies over your plants. Shoot it down!" },
-    "pogo": { "name": "Pogo-Bot", "desc": "Jumps over the first plant in its way, unless it's tall." },
-    "shield": { "name": "Shield-Bot", "desc": "Its shield blocks shots from the front. Lob over it." },
-    "tank": { "name": "Tread Tank", "desc": "Huge and slow. Flattens any plant it reaches." },
-    "boss": { "name": "Gearax", "desc": "The robot king. Calls for help and zaps your plants." }
+    "bot": {
+      "name": "Bolt-Bot",
+      "desc": "A wind-up robot. Slow, but it never stops."
+    },
+    "brute": {
+      "name": "Tin Brute",
+      "desc": "Wears a steel helmet that soaks up hits."
+    },
+    "mini": {
+      "name": "Mini-Bot",
+      "desc": "Tiny and fast; comes in threes."
+    },
+    "drone": {
+      "name": "Buzz Drone",
+      "desc": "Flies over your plants. Shoot it down!"
+    },
+    "pogo": {
+      "name": "Pogo-Bot",
+      "desc": "Jumps over the first plant in its way, unless it's tall."
+    },
+    "shield": {
+      "name": "Shield-Bot",
+      "desc": "Its shield blocks shots from the front. Lob over it."
+    },
+    "tank": {
+      "name": "Tread Tank",
+      "desc": "Huge and slow. Flattens any plant it reaches."
+    },
+    "boss": {
+      "name": "Gearax",
+      "desc": "The robot king. Calls for help and zaps your plants."
+    }
   },
   "level": {
     "title": "{world} · {label}",
@@ -114,7 +192,8 @@
     "seedCost": "{name}, costs {cost} dew",
     "notEnough": "Not enough dew",
     "recharging": "Recharging",
-    "status": "{dew} dew. Wave {wave} of {total}."
+    "status": "{dew} dew. Wave {wave} of {total}.",
+    "noWebgl": "This device can't show the 3D garden (WebGL is off or not supported)."
   },
   "hints": {
     "pickBulb": "Tap the Glow Bulb, then tap a tile on the lawn",
@@ -157,7 +236,12 @@
     "skip": "Skip",
     "next": "Next",
     "done": "Let's go!",
-    "names": { "dara": "Dara", "yay": "Yay", "mealea": "Mealea", "gearax": "Gearax" },
+    "names": {
+      "dara": "Dara",
+      "yay": "Yay",
+      "mealea": "Mealea",
+      "gearax": "Gearax"
+    },
     "backyard": {
       "intro": [
         "Yay! Something is stomping through our vegetables!",
@@ -247,12 +331,8 @@
     "resetConfirm": "Erase all stars and levels on this device? This can't be undone.",
     "resetDo": "Erase",
     "cancel": "Cancel",
-    "privacy": "Your progress stays on this device."
-  },
-  "rotate": {
-    "title": "Turn your phone sideways",
-    "text": "The garden is wide: it's much easier to play in landscape.",
-    "anyway": "Play anyway"
+    "privacy": "Your progress stays on this device.",
+    "hd": "High-quality graphics"
   },
   "pwa": {
     "install": "Install",

@@ -22,6 +22,9 @@ const reduced = useReducedMotion()
 const audio = useGameAudio()
 
 const phase = ref<Phase>('loading')
+/** Whether the garden is on screen (the menus' 3D backdrop rests meanwhile). */
+const playing = useState('playing', () => false)
+watch(phase, p => (playing.value = p === 'playing' || p === 'result' || p === 'storyOutro'), { immediate: true })
 const level = shallowRef<LevelDef>(getLevel(1))
 const loadout = ref<PlantId[]>([])
 const engine = shallowRef<Engine | null>(null)
@@ -333,28 +336,18 @@ function onVisibility() {
   }
 }
 
-/* ------------------------------ Phones held upright ------------------------------ */
-
-const portrait = ref(false)
-const rotateDismissed = useState('rotate-dismissed', () => false)
-function checkOrientation() {
-  portrait.value = window.innerHeight > window.innerWidth && window.innerWidth < 700
-}
-
 watch(() => route.params.level, () => {
   if (route.path.startsWith('/play/')) init()
 })
 
 onMounted(() => {
   init()
-  checkOrientation()
   window.addEventListener('keydown', onKey)
-  window.addEventListener('resize', checkOrientation)
   document.addEventListener('visibilitychange', onVisibility)
 })
 onBeforeUnmount(() => {
+  playing.value = false
   window.removeEventListener('keydown', onKey)
-  window.removeEventListener('resize', checkOrientation)
   document.removeEventListener('visibilitychange', onVisibility)
   clearTimeout(bannerTimer)
   audio?.stopMusic()
@@ -638,42 +631,5 @@ onBeforeUnmount(() => {
       v-model:open="settingsOpen"
       @change="onSettingChange"
     />
-
-    <!-- Phones held upright: ask to turn sideways (once). -->
-    <AnimatePresence>
-      <motion.div
-        v-if="portrait && !rotateDismissed && phase === 'playing'"
-        :initial="{ opacity: 0 }"
-        :animate="{ opacity: 1 }"
-        :exit="{ opacity: 0 }"
-        class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-moss-950/90 p-8 text-center backdrop-blur"
-        role="dialog"
-        aria-modal="true"
-        :aria-label="t('rotate.title')"
-      >
-        <motion.div
-          :animate="reduced ? {} : { rotate: [0, -90, -90, 0] }"
-          :transition="{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }"
-        >
-          <UIcon
-            name="i-lucide-smartphone"
-            class="size-20 text-leaf-300"
-          />
-        </motion.div>
-        <h2 class="font-display text-3xl text-glow">
-          {{ t('rotate.title') }}
-        </h2>
-        <p class="max-w-xs text-moss-200">
-          {{ t('rotate.text') }}
-        </p>
-        <button
-          type="button"
-          class="btn-game ghost"
-          @click="rotateDismissed = true"
-        >
-          {{ t('rotate.anyway') }}
-        </button>
-      </motion.div>
-    </AnimatePresence>
   </div>
 </template>
