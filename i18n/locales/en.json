@@ -1,0 +1,265 @@
+{
+  "app": {
+    "title": "Garden Guard",
+    "tagline": "Plant guardians, stop the Bolt-Bots, save the village",
+    "subtitle": "Veggies vs. Bolt-Bots"
+  },
+  "home": {
+    "allGames": "All games",
+    "play": "Play",
+    "continue": "Continue {level}",
+    "start": "Start the story",
+    "levels": "Levels",
+    "settings": "Settings",
+    "stars": "{n} of {total} stars",
+    "cleared": "{n} of {total} levels",
+    "allDone": "Every level cleared! Go back for three stars.",
+    "howTitle": "How to play",
+    "how1": "Tap a seed, then a tile to plant it. Or drag the seed onto the lawn.",
+    "how2": "Tap the dew drops to collect them: dew pays for plants.",
+    "how3": "Stop every robot before it reaches your patio."
+  },
+  "map": {
+    "title": "Levels",
+    "back": "Back",
+    "world": "World {n}",
+    "locked": "Locked",
+    "lockedHint": "Clear the level before it to open this one",
+    "worldLocked": "Clear world {n} to open",
+    "story": "Story",
+    "level": "Level {label}",
+    "stars": "{n} of 3 stars",
+    "boss": "Boss"
+  },
+  "worlds": {
+    "backyard": { "name": "Sunny Backyard", "blurb": "Where it all begins: Dara's vegetable patch." },
+    "moonlit": { "name": "Moonlit Garden", "blurb": "No dew falls at night. Moon Bulbs keep you going." },
+    "terraces": { "name": "Rice Terraces", "blurb": "Mist rolls over the fields and hides the robots." },
+    "temple": { "name": "Temple Ruins", "blurb": "Fallen stones block some tiles of the old garden." },
+    "river": { "name": "Mekong Riverside", "blurb": "A storm: faster robots, but more dew from the sky." },
+    "factory": { "name": "Gearax Factory", "blurb": "The final battle, in the rust and the dark." }
+  },
+  "kinds": {
+    "tutorial": "Lesson",
+    "normal": "Level",
+    "laststand": "Last stand",
+    "rush": "Rush hour",
+    "boss": "Boss"
+  },
+  "mods": {
+    "night": "Night: no dew from the sky",
+    "fog": "Fog hides the robots",
+    "rubble": "Rubble blocks some tiles",
+    "rain": "Storm: faster robots",
+    "rush": "Robots move faster",
+    "laststand": "Lots of dew, no producers: build, then hold",
+    "boss": "Gearax attacks",
+    "rows": "Fewer rows: a gentle start"
+  },
+  "plants": {
+    "bulb": { "name": "Glow Bulb", "desc": "Makes 25 dew every few seconds. Plant these first." },
+    "moonbulb": { "name": "Moon Bulb", "desc": "Cheap, and makes a little dew often. Great at night." },
+    "chili": { "name": "Chili Cannon", "desc": "Shoots fireballs down its row." },
+    "twin": { "name": "Twin Pepper", "desc": "Shoots two fireballs at a time." },
+    "mint": { "name": "Frost Mint", "desc": "Its icy shots slow robots down." },
+    "bamboo": { "name": "Bamboo Blaster", "desc": "Its leaf darts fly through every robot in the row." },
+    "lotus": { "name": "Lotus Lobber", "desc": "Throws seeds over shields, splashing robots nearby." },
+    "pumpkin": { "name": "Pumpkin Wall", "desc": "Tough. Robots stop to chew on it." },
+    "sugarpalm": { "name": "Sugar Palm", "desc": "Very tough and tall: nothing jumps over it." },
+    "corn": { "name": "Corn Popper", "desc": "Explodes after a second, clearing a 3×3 area." },
+    "coconut": { "name": "Coconut Mine", "desc": "Takes a while to arm, then blows up the first robot to step on it." },
+    "durian": { "name": "Durian Spikes", "desc": "Hurts every robot that walks over it, and pops a tank's treads." }
+  },
+  "robots": {
+    "bot": { "name": "Bolt-Bot", "desc": "A wind-up robot. Slow, but it never stops." },
+    "brute": { "name": "Tin Brute", "desc": "Wears a steel helmet that soaks up hits." },
+    "mini": { "name": "Mini-Bot", "desc": "Tiny and fast; comes in threes." },
+    "drone": { "name": "Buzz Drone", "desc": "Flies over your plants. Shoot it down!" },
+    "pogo": { "name": "Pogo-Bot", "desc": "Jumps over the first plant in its way, unless it's tall." },
+    "shield": { "name": "Shield-Bot", "desc": "Its shield blocks shots from the front. Lob over it." },
+    "tank": { "name": "Tread Tank", "desc": "Huge and slow. Flattens any plant it reaches." },
+    "boss": { "name": "Gearax", "desc": "The robot king. Calls for help and zaps your plants." }
+  },
+  "level": {
+    "title": "{world} · {label}",
+    "play": "Play",
+    "start": "Start",
+    "newPlant": "New plant",
+    "newRobot": "New robot",
+    "robots": "Robots in this level",
+    "seeds": "Your seeds",
+    "pick": "Pick {n} seeds",
+    "picked": "{n} of {max}",
+    "auto": "Suggest",
+    "clear": "Clear",
+    "best": "Best",
+    "noProducers": "No producers in a last stand"
+  },
+  "game": {
+    "board": "Garden",
+    "dew": "Dew",
+    "shovel": "Shovel: dig up a plant",
+    "pause": "Pause",
+    "speed": "Speed ×{n}",
+    "wave": "Wave {n} of {total}",
+    "getReady": "Get ready",
+    "ready": "Ready…",
+    "set": "Set…",
+    "plant": "Plant!",
+    "hugeWave": "A huge wave is coming!",
+    "finalWave": "Final wave",
+    "waveIn": "Robots are coming!",
+    "bossHere": "Gearax is here!",
+    "cartGone": "Garden cart used!",
+    "seedCost": "{name}, costs {cost} dew",
+    "notEnough": "Not enough dew",
+    "recharging": "Recharging",
+    "status": "{dew} dew. Wave {wave} of {total}."
+  },
+  "hints": {
+    "pickBulb": "Tap the Glow Bulb, then tap a tile on the lawn",
+    "collect": "Tap the dew drops to collect them",
+    "pickChili": "Now plant a Chili Cannon in the same row",
+    "goodJob": "Great! Keep planting and collecting dew",
+    "drag": "Tip: you can also drag a seed onto the lawn"
+  },
+  "pause": {
+    "title": "Paused",
+    "resume": "Resume",
+    "restart": "Restart",
+    "quit": "Levels"
+  },
+  "result": {
+    "won": "Garden saved!",
+    "lost": "The robots got in!",
+    "lostText": "They reached your patio.",
+    "next": "Next level",
+    "replay": "Play again",
+    "retry": "Try again",
+    "levels": "Levels",
+    "star1": "Level cleared",
+    "star2": "No garden carts used",
+    "star3": "No plants lost",
+    "unlocked": "New plant next level: {name}",
+    "worldDone": "World {n} complete!",
+    "theEnd": "You saved the village!",
+    "tips": {
+      "economy": "Plant two Glow Bulbs per row early. More dew means more defenders.",
+      "walls": "Put a Pumpkin Wall in front of your shooters to buy time.",
+      "corn": "Save a Corn Popper for crowded rows.",
+      "shields": "Shield-Bots block straight shots. Lotus Lobbers throw over them.",
+      "pogo": "Sugar Palms stop Pogo-Bots from jumping.",
+      "night": "At night, plant Moon Bulbs first: they're cheap and fast.",
+      "tank": "Coconut Mines and Corn Poppers stop tanks before they flatten your garden."
+    }
+  },
+  "story": {
+    "skip": "Skip",
+    "next": "Next",
+    "done": "Let's go!",
+    "names": { "dara": "Dara", "yay": "Yay", "mealea": "Mealea", "gearax": "Gearax" },
+    "backyard": {
+      "intro": [
+        "Yay! Something is stomping through our vegetables!",
+        "Robots, little Dara. Wind-up robots, marching in from the road.",
+        "What do we do? They're chewing the chilies!",
+        "We plant. These seeds were my grandmother's. With morning dew, they wake up and fight back.",
+        "Glow Bulbs gather dew. Chili Cannons do the rest. Go on, plant!"
+      ],
+      "outro": [
+        "INEFFICIENT. A garden is stopping my Bolt-Bots.",
+        "Who are you?!",
+        "I am GEARAX. I will turn every green field into a factory floor. My robots return tonight.",
+        "Then we'll be ready tonight. Rest now, Dara."
+      ]
+    },
+    "moonlit": {
+      "intro": [
+        "It's so dark. No dew is falling from the sky.",
+        "At night the Moon Bulbs wake up. They're small, but they never stop working.",
+        "I'll plant them first, then the chilies.",
+        "Good. And watch the sky: some robots fly now."
+      ],
+      "outro": [
+        "Your moon flowers cannot last forever. Next, I take the village rice fields.",
+        "Not Mealea's fields! Let's go, Yay!"
+      ]
+    },
+    "terraces": {
+      "intro": [
+        "Dara! The mist came down this morning, and so did the robots.",
+        "We can't see them in the fog, but we can still stop them.",
+        "My Sugar Palms are tall. Nothing jumps over them.",
+        "Plant deep, children. These fields feed the whole village."
+      ],
+      "outro": [
+        "We saved the harvest!",
+        "The harvest means nothing. The Heart Seed, hidden in the old temple, will power my factory forever.",
+        "The Heart Seed… so the old stories were true."
+      ]
+    },
+    "temple": {
+      "intro": [
+        "This temple garden was planted a thousand years ago. Fallen stones block some of the paths.",
+        "We plant around them. And Lotus Lobbers can throw right over those robot shields.",
+        "Then let's protect the Heart Seed."
+      ],
+      "outro": [
+        "The Heart Seed is safe!",
+        "Then I will send an army. My fleet comes down the river with the storm.",
+        "Rain makes plants grow, Gearax. We'll meet you at the riverbank."
+      ]
+    },
+    "river": {
+      "intro": [
+        "The storm makes the robots faster, and the river is rising!",
+        "But the rain brings more dew too. More dew, more plants.",
+        "After the river is the factory. Stay brave, my children."
+      ],
+      "outro": [
+        "Impossible. You have reached my factory.",
+        "We're coming in, Gearax. And we're bringing the garden with us."
+      ]
+    },
+    "factory": {
+      "intro": [
+        "No grass grows here, only rust. But every crack has a little soil.",
+        "Everything we've learned, every plant we have: right here.",
+        "This is it. Let's end this."
+      ],
+      "outro": [
+        "System… failing. Why do you… protect… plants?",
+        "Because everything that grows gives something back. Even you can grow, Gearax.",
+        "Rebooting… New directive: water the garden.",
+        "Welcome to the village, Gearax. You can start with the chilies!",
+        "The end. But a garden is never finished: play any level again for three stars."
+      ]
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "sound": "Sound effects",
+    "music": "Music",
+    "haptics": "Vibration",
+    "autoCollect": "Collect dew by itself",
+    "reset": "Erase progress",
+    "resetConfirm": "Erase all stars and levels on this device? This can't be undone.",
+    "resetDo": "Erase",
+    "cancel": "Cancel",
+    "privacy": "Your progress stays on this device."
+  },
+  "rotate": {
+    "title": "Turn your phone sideways",
+    "text": "The garden is wide: it's much easier to play in landscape.",
+    "anyway": "Play anyway"
+  },
+  "pwa": {
+    "install": "Install",
+    "offlineReady": "Ready to play offline",
+    "iosTitle": "Install on iPhone or iPad",
+    "iosStep1": "In Safari, tap the Share button",
+    "iosStep2": "Choose “Add to Home Screen”, then “Add”.",
+    "update": "A new version is ready"
+  }
+}
